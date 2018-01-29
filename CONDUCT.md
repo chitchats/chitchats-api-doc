@@ -67,7 +67,7 @@ members of the project's leadership.
 
 ## Project Maintainers
 
-* Javan Makhmali <<javan@basecamp.com>>
+* Gerry Shaw <<gshaw@chitchats.com>>
 
 ## Attribution
 
