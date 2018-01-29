@@ -21,7 +21,7 @@ Get all shipments
 
 _Optional parameters_:
 
-* `batch` (integer) - when set return shpments that belong to the given batch.
+* `batch` (integer) - when set return shipments that belong to the given batch.
 
 * `from_date` (date) - when set return shipments with a `created_at` on or after the given date.
 
@@ -41,7 +41,7 @@ _Optional parameters_:
     * `inducted` - shipment is confirmed by tracking event to be in possesion by the shipping carrier.
   * `resolved` - the shipment has been resolved. The following three statuses can be used to filter with greater detail:
     * `delivered` - resolved as delivered.
-    * `exception` - resolved as exception meaning that there may have been a problem deliverying the shipment. It doesn't always mean the shipment was not deliveried.
+    * `exception` - resolved as exception meaning that there may have been a problem deliverying the shipment. It doesn't always mean the shipment was not delivered.
     * `voided` - resolved as voided because a postage refund was requested.
 
 * `to_date` (date) - when set only return shipments with a `created_at` greater than or equal to the given date.
@@ -170,11 +170,11 @@ Create a shipment
 ``` json
 {
   "name": "Jane Doe",
-  "address_1": "123 Anywhere St",
+  "address_1": "123 ANYWHERE ST.",
   "address_2": "",
   "city": "Vancouver",
   "province_code": "BC",
-  "postal_code": "V6K 1B1",
+  "postal_code": "V6K 1A1",
   "country_code": "CA",
   "phone": "800-555-1212",
   "return_us_address": "",
@@ -208,7 +208,7 @@ curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Jane Doe",
-    "address_1": "123 Anywhere St.",
+    "address_1": "123 ANYWHERE ST.",
     "city": "Vancouver",
     "province_code": "BC",
     "postal_code": "V6K 1A1",
@@ -304,6 +304,3 @@ curl -s -X PATCH \
   }' \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/remove_from_batch"
 ```
-
-
-[pagination]: https://github.com/chitchats/chitchats-api-doc/blob/master/README.md#pagination

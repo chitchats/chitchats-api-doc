@@ -17,9 +17,7 @@ Get all batches
 
 _Optional parameters_:
 
-_Optional parameters_:
-
-* `limit` (integer) - number of records to return per page (default is 25)
+* `limit` (integer) - number of records to return per page (default is 100)
 
 * `page` (integer) - pagination page number (default is 1)
 
@@ -28,7 +26,7 @@ _Optional parameters_:
   * `ready` - batches that have not been received but with all shipments ready to receive.
   * `received` - batches that have been received.
 
-* `to_date` (date) - when set only return shipments with a `created_at` greater than or equal to the given date.
+* `to_date` (date) - when set, only return shipments with a `created_at` greater than or equal to the given date.
 
 ###### Example JSON Response
 ```json
@@ -69,7 +67,7 @@ Count batches
 Get a batch
 -----------
 
-* `GET /batches/1` will return the batch with the given ID, granted they have access to it.
+* `GET /batches/1` will return the batch with the given ID.
 
 ###### Example JSON Response
 ```json

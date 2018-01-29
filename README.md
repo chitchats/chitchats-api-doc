@@ -56,7 +56,7 @@ You'll receive a `415 Unsupported Media Type` response code if you don't include
 Pagination
 ----------
 
-Most collection APIs paginate their results. The default is usually 100. The limit can be increased to 1000. Use the `limit` and `page` URL parameters to control pagination or the `count` end point to get the number of records in a collection.
+Most collection APIs paginate their results. The default is usually 100. The limit can be increased to 1000. Use the `limit` and `page` URL parameters to control pagination or the `count` endpoint to get the number of records in a collection.
 
 
 Handling errors
