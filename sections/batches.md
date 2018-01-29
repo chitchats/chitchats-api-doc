@@ -9,6 +9,7 @@ Endpoints:
 - [Create a batch](#create-a-batch)
 - [Delete a batch](#delete-a-batch)
 
+
 Get all batches
 ----------------
 
@@ -42,10 +43,11 @@ _Optional parameters_:
     "status": "received",
     "created_at": "2017-09-11T17:29:21.912-07:00"
   }
-]```
+]
+```
 
 ###### Copy as cURL
-``` shell
+```shell
 curl -s -H "Authorization: $ACCESS_TOKEN" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/batches"
 ```
@@ -54,7 +56,7 @@ curl -s -H "Authorization: $ACCESS_TOKEN" \
 Count batches
 ---------------
 
-* `GET /batches/count` will return number of batches.  You can pass the `state` parameter in [Get all shipments](#get-all-shipments) to count shipments in a specific state.
+* `GET /batches/count` will return number of batches. You can pass the `state` parameter in [Get all shipments](#get-all-shipments) to count shipments in a specific state.
 
 ###### Example JSON Response
 ```json
@@ -103,6 +105,7 @@ curl -s -X POST \
   -H "Content-Type: application/json" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/batches"
 ```
+
 
 Delete a batch
 --------------
