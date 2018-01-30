@@ -68,10 +68,9 @@ If Chit Chats is having trouble, you might get a 5xx error. `500` means that the
 Rate limiting
 -------------
 
-You can perform up to 50 requests per 10-second period from the same IP address for the same account. If you exceed this limit, you'll get a [429 Too Many Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4) response for subsequent requests. Check the `Retry-After` header to learn how many seconds to wait before retrying the request.
+You can perform up to 2000 requests per 5 minute period from the same IP address for the same account. If you exceed this limit, you'll get a [429 Too Many Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4) response for subsequent requests. Check the `Retry-After` header to learn how many seconds to wait before retrying the request.
 
 We recommend baking 429 response-handling in to your HTTP handling at a low level so your integration handles retries gracefully and automatically.
-
 
 API endpoints
 -------------
