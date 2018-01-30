@@ -12,15 +12,36 @@ All URLs start with **`https://chitchats.com/api/v1/`**. URLs are HTTPS only.
 To make a request for all the shipments on your account, use your client ID in the URL replacing the 999999 placeholder to form something like `https://chitchats.com/api/v1/clients/999999/shipments`. In cURL, it looks like this:
 
 ```shell
-curl -H "Authorization: $ACCESS_TOKEN" "https://chitchats.com/api/v1/clients/999999/shipments"
+curl -H "Authorization: $ACCESS_TOKEN" \
+  "https://chitchats.com/api/v1/clients/999999/shipments"
 ```
 
 To create something, it's the same idea, but you also have to include the `Content-Type` header and the JSON data:
 
 ```shell
-curl -H "Authorization: $ACCESS_TOKEN" \
+curl -X POST \
+  -H "Authorization: $ACCESS_TOKEN" \
   -H 'Content-Type: application/json' \
-  -d '{ "fake": "true" }' \
+  -d '{
+    "name": "Jane Doe",
+    "address_1": "123 ANYWHERE ST.",
+    "city": "Vancouver",
+    "province_code": "BC",
+    "postal_code": "V6K 1A1",
+    "country_code": "CA",
+    "description": "Hand made bracelet",
+    "value": "85",
+    "value_currency": "usd",
+    "package_type": "parcel",
+    "size_unit": "cm",
+    "size_x": "10",
+    "size_y": "5",
+    "size_z": "2",
+    "weight_unit": "g",
+    "weight": "250",
+    "postage_type": "chit_chats_canada_tracked",
+    "ship_date": "today"
+  }' \
   "https://chitchats.com/api/v1/clients/999999/shipments"
 ```
 
