@@ -304,3 +304,6 @@ curl -s -X PATCH \
   }' \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/remove_from_batch"
 ```
+
+
+[pagination]: https://github.com/chitchats/chitchats-api-doc/blob/master/README.md#pagination
