@@ -9,6 +9,7 @@ Endpoints:
 - [Create a batch](#create-a-batch)
 - [Delete a batch](#delete-a-batch)
 
+
 Get all batches
 ----------------
 
@@ -16,9 +17,7 @@ Get all batches
 
 _Optional parameters_:
 
-_Optional parameters_:
-
-* `limit` (integer) - number of records to return per page (default is 25)
+* `limit` (integer) - number of records to return per page (default is 100)
 
 * `page` (integer) - pagination page number (default is 1)
 
@@ -27,7 +26,7 @@ _Optional parameters_:
   * `ready` - batches that have not been received but with all shipments ready to receive.
   * `received` - batches that have been received.
 
-* `to_date` (date) - when set only return shipments with a `created_at` greater than or equal to the given date.
+* `to_date` (date) - when set, only return shipments with a `created_at` greater than or equal to the given date.
 
 ###### Example JSON Response
 ```json
@@ -42,10 +41,11 @@ _Optional parameters_:
     "status": "received",
     "created_at": "2017-09-11T17:29:21.912-07:00"
   }
-]```
+]
+```
 
 ###### Copy as cURL
-``` shell
+```shell
 curl -s -H "Authorization: $ACCESS_TOKEN" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/batches"
 ```
@@ -54,7 +54,7 @@ curl -s -H "Authorization: $ACCESS_TOKEN" \
 Count batches
 ---------------
 
-* `GET /batches/count` will return number of batches.  You can pass the `state` parameter in [Get all shipments](#get-all-shipments) to count shipments in a specific state.
+* `GET /batches/count` will return number of batches. You can pass the `state` parameter in [Get all shipments](#get-all-shipments) to count shipments in a specific state.
 
 ###### Example JSON Response
 ```json
@@ -67,7 +67,7 @@ Count batches
 Get a batch
 -----------
 
-* `GET /batches/1` will return the batch with the given ID, granted they have access to it.
+* `GET /batches/1` will return the batch with the given ID.
 
 ###### Example JSON Response
 ```json
@@ -103,6 +103,7 @@ curl -s -X POST \
   -H "Content-Type: application/json" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/batches"
 ```
+
 
 Delete a batch
 --------------

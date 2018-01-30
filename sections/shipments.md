@@ -21,7 +21,7 @@ Get all shipments
 
 _Optional parameters_:
 
-* `batch` (integer) - when set return shpments that belong to the given batch.
+* `batch` (integer) - when set return shipments that belong to the given batch.
 
 * `from_date` (date) - when set return shipments with a `created_at` on or after the given date.
 
@@ -32,20 +32,19 @@ _Optional parameters_:
 * `q` (string) - allows for full text searching of shipments by `shipment_id`, `to_address_name`, or `order_id`.
 
 * `state` (enum) - allows for searching shipments based on the following states:
-  * `canceled` - the shipment has been canceled to prevent delivery and will be either be held at a branch or returned to the client.
-  * `pending` - the shipment is in the process of being created by the client.  Shipments in this state cannot be received by Chat Chats.
+  * `canceled` - the shipment has been canceled to prevent delivery and will either be held at a branch or returned to the client.
+  * `pending` - the shipment is in the process of being created by the client. Shipments in this state cannot be received by Chat Chats.
   * `ready` - the shipment is ready to be received by Chit Chats. This means the postage has been purchased or provided.
-  * `in_transit` - the shipment is in the process of being delivered.  The following three statuses can be used to filter with greater detail:
+  * `in_transit` - the shipment is in the process of being delivered. The following three statuses can be used to filter with greater detail:
     * `received` - the shipment has been received by Chit Chats.
     * `released` - Chit Chats has released the shipment to the carrier.
     * `inducted` - shipment is confirmed by tracking event to be in possesion by the shipping carrier.
-  * `resolved` - the shipment has been resolved.  The following three statuses can be used to filter with greater detail:
+  * `resolved` - the shipment has been resolved. The following three statuses can be used to filter with greater detail:
     * `delivered` - resolved as delivered.
-    * `exception` - resolved as exception meaning that there may have been a problem deliverying the shipment.  It doesn't always mean the shipment was not deliveried.
+    * `exception` - resolved as exception meaning that there may have been a problem deliverying the shipment. It doesn't always mean the shipment was not delivered.
     * `voided` - resolved as voided because a postage refund was requested.
 
 * `to_date` (date) - when set only return shipments with a `created_at` greater than or equal to the given date.
-
 
 ###### Example JSON Response
 ```json
@@ -62,16 +61,18 @@ _Optional parameters_:
   }
 ]
 ```
+
 ###### Copy as cURL
 ``` shell
 curl -H "Authorization: $ACCESS_TOKEN" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments"
 ```
 
+
 Count shipments
 ---------------
 
-* `GET /shipments/count` will return number of shipments.  You can pass the `state` parameter in [Get all shipments](#get-all-shipments) to count shipments in a specific state.
+* `GET /shipments/count` will return number of shipments. You can pass the `state` parameter in [Get all shipments](#get-all-shipments) to count shipments in a specific state.
 
 ###### Example JSON Response
 ```json
@@ -169,11 +170,11 @@ Create a shipment
 ``` json
 {
   "name": "Jane Doe",
-  "address_1": "123 Anywhere St",
+  "address_1": "123 ANYWHERE ST.",
   "address_2": "",
   "city": "Vancouver",
   "province_code": "BC",
-  "postal_code": "V6K 1B1",
+  "postal_code": "V6K 1A1",
   "country_code": "CA",
   "phone": "800-555-1212",
   "return_us_address": "",
@@ -198,7 +199,7 @@ Create a shipment
 }
 ```
 
-This will return `201 Created` with the URL of the shipment in the `Location` header if the creation was a success. See the [Get a shipment](#get-a-shipment) endpoint for more info. 
+This will return `201 Created` with the URL of the shipment in the `Location` header if the creation was a success. See the [Get a shipment](#get-a-shipment) endpoint for more info.
 
 ###### Copy as cURL
 ``` shell
@@ -207,7 +208,7 @@ curl -X POST \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Jane Doe",
-    "address_1": "123 Anywhere St.",
+    "address_1": "123 ANYWHERE ST.",
     "city": "Vancouver",
     "province_code": "BC",
     "postal_code": "V6K 1A1",
@@ -232,7 +233,7 @@ curl -X POST \
 Delete a shipment
 -----------------
 
-* `DELETE /shipments/abcde12345` will delete the pending shipment with the given ID if allowed.  If the shipment has purchased postage or has been received by Chit Chats the shipment cannot be deleted but it can be refunded to void the shipment. No parameters required. Returns `204 No Content` if successful.
+* `DELETE /shipments/abcde12345` will delete the pending shipment with the given ID if allowed. If the shipment has purchased postage or has been received by Chit Chats the shipment cannot be deleted but it can be refunded to void the shipment. No parameters required. Returns `204 No Content` if successful.
 
 ###### Copy as cURL
 
@@ -303,6 +304,3 @@ curl -s -X PATCH \
   }' \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/remove_from_batch"
 ```
-
-
-[pagination]: https://github.com/chitchats/chitchats-api-doc/blob/master/README.md#pagination

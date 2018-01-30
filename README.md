@@ -40,7 +40,7 @@ curl -s -H "Authorization: $ACCESS_TOKEN" "https://chitchats.com/api/v1/clients/
 Authentication
 --------------
 
-Before you can use the API you must first create an API access token.  You do this from the Settings > Account section of the Chit Chats website.  Treat the access tokens as passwords and do not share them or check them into source code repositories.  Deleting an access token will immediately revoke access.
+Before you can use the API you must first create an API access token. You do this from the Settings > Account section of the Chit Chats website. Treat the access tokens as passwords and do not share them or check them into source code repositories. Deleting an access token will immediately revoke access.
 
 Once you have an access token you must pass it in the `Authorization` header with every request.
 
@@ -56,7 +56,7 @@ You'll receive a `415 Unsupported Media Type` response code if you don't include
 Pagination
 ----------
 
-Most collection APIs paginate their results. The default is usually 100.  The limit can be increased to 1000.  Use the `limit` and `page` URL parameters to control pagination or the `count` end point to get the number of records in a collection.
+Most collection APIs paginate their results. The default is usually 100. The limit can be increased to 1000. Use the `limit` and `page` URL parameters to control pagination or the `count` endpoint to get the number of records in a collection.
 
 
 Handling errors
