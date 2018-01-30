@@ -80,7 +80,7 @@ Get a batch
 
 ###### Copy as cURL
 
-``` shell
+```shell
 curl -s -H "Authorization: $ACCESS_TOKEN" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/batches/1"
 ```
@@ -97,7 +97,7 @@ This will return `201 Created` if the creation was a success with the URL of bat
 
 ###### Copy as cURL
 
-``` shell
+```shell
 curl -s -X POST \
   -H "Authorization: $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
@@ -112,7 +112,7 @@ Delete a batch
 
 ###### Copy as cURL
 
-``` shell
+```shell
 curl -s -X DELETE \
   -H "Authorization: $ACCESS_TOKEN" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/batches/1"

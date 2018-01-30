@@ -11,13 +11,13 @@ All URLs start with **`https://chitchats.com/api/v1/`**. URLs are HTTPS only.
 
 To make a request for all the shipments on your account, use your client ID in the URL replacing the 999999 placeholder to form something like `https://chitchats.com/api/v1/clients/999999/shipments`. In cURL, it looks like this:
 
-``` shell
+```shell
 curl -H "Authorization: $ACCESS_TOKEN" "https://chitchats.com/api/v1/clients/999999/shipments"
 ```
 
 To create something, it's the same idea, but you also have to include the `Content-Type` header and the JSON data:
 
-``` shell
+```shell
 curl -H "Authorization: $ACCESS_TOKEN" \
   -H 'Content-Type: application/json' \
   -d '{ "fake": "true" }' \
@@ -26,14 +26,14 @@ curl -H "Authorization: $ACCESS_TOKEN" \
 
 Throughout the Chit Chats API docs, we include "Copy as cURL" examples. To try the examples in your shell, copy your access token into your clipboard and run:
 
-``` shell
+```shell
 export ACCESS_TOKEN=PASTE_ACCESS_TOKEN_HERE
 export CLIENT_ID=999999
 ```
 
 Then you should be able to copy/paste any example from the docs. After pasting a cURL example, you can pipe it to a JSON pretty printer to make it more readable. Try [jsonpp](https://jmhodges.github.io/jsonpp/) or `json_pp` on OSX:
 
-``` shell
+```shell
 curl -s -H "Authorization: $ACCESS_TOKEN" "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments" | json_pp
 ```
 

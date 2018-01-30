@@ -63,7 +63,7 @@ _Optional parameters_:
 ```
 
 ###### Copy as cURL
-``` shell
+```shell
 curl -H "Authorization: $ACCESS_TOKEN" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments"
 ```
@@ -155,7 +155,7 @@ The `tracking_details` key contains an array of the tracking evens for the shipm
 ```
 
 ###### Copy as cURL
-``` shell
+```shell
 curl -H "Authorization: $ACCESS_TOKEN" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/1by4s9h87b"
 ```
@@ -167,7 +167,7 @@ Create a shipment
 * `POST /shipments` with the required parameters (see example) to create a new shipment.
 
 ###### Example JSON Request
-``` json
+```json
 {
   "name": "Jane Doe",
   "address_1": "123 ANYWHERE ST.",
@@ -202,7 +202,7 @@ Create a shipment
 This will return `201 Created` with the URL of the shipment in the `Location` header if the creation was a success. See the [Get a shipment](#get-a-shipment) endpoint for more info.
 
 ###### Copy as cURL
-``` shell
+```shell
 curl -X POST \
   -H "Authorization: $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
@@ -237,7 +237,7 @@ Delete a shipment
 
 ###### Copy as cURL
 
-``` shell
+```shell
 curl -s -X DELETE \
   -H "Authorization: $ACCESS_TOKEN" \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345"
@@ -250,7 +250,7 @@ Add shipments to a batch
 * `PATCH /shipments/add_to_batch` will add the given shipments to the given batch. Returns `200 OK` if successful.
 
 ###### Example JSON Request
-``` json
+```json
 {
   "batch": 1,
   "shipment_ids": [
@@ -261,7 +261,7 @@ Add shipments to a batch
 ```
 
 ###### Copy as cURL
-``` shell
+```shell
 curl -s -X PATCH \
   -H "Authorization: $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
@@ -282,7 +282,7 @@ Remove shipments from a batch
 * `PATCH /shipments/remove_from_batch` will remove shipments for the batch they belong to. Returns `200 OK` if successful.
 
 ###### Example JSON Request
-``` json
+```json
 {
   "shipment_ids": [
     "ABCDE12345",
@@ -292,7 +292,7 @@ Remove shipments from a batch
 ```
 
 ###### Copy as cURL
-``` shell
+```shell
 curl -s -X PATCH \
   -H "Authorization: $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
