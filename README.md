@@ -100,6 +100,11 @@ API endpoints
 - [Batches](https://github.com/chitchats/chitchats-api-doc/blob/master/sections/batches.md)
 - [Shipments](https://github.com/chitchats/chitchats-api-doc/blob/master/sections/shipments.md)
 
+Examples
+--------
+
+- [Ruby](https://github.com/chitchats/chitchats-api-ruby-example)
+
 Conduct
 -------
 
