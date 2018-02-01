@@ -1,6 +1,8 @@
 The Chit Chats API
 ==================
 
+**API IS IN BETA** Contact support for access.
+
 Welcome to the Chit Chats API! If you're looking to integrate your application with Chit Chats or create your own application in concert with data inside of Chit Chats, you're in the right place. We're happy to have you!
 
 
