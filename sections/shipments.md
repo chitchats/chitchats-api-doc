@@ -21,7 +21,7 @@ Get all shipments
 
 _Optional parameters_:
 
-* `batch` (integer) - when set return shipments that belong to the given batch.
+* `batch_id` (integer) - when set return shipments that belong to the given batch.
 
 * `from_date` (date) - when set return shipments with a `created_at` on or after the given date.
 
@@ -31,7 +31,7 @@ _Optional parameters_:
 
 * `q` (string) - allows for full text searching of shipments by `shipment_id`, `to_address_name`, or `order_id`.
 
-* `state` (enum) - allows for searching shipments based on the following states:
+* `status` (enum) - allows for searching shipments based on the following states:
   * `canceled` - the shipment has been canceled to prevent delivery and will either be held at a branch or returned to the client.
   * `pending` - the shipment is in the process of being created by the client. Shipments in this state cannot be received by Chat Chats.
   * `ready` - the shipment is ready to be received by Chit Chats. This means the postage has been purchased or provided.
@@ -50,15 +50,68 @@ _Optional parameters_:
 ```json
 [
   {
-    "shipment_id": "1BY4S9H87B",
-    "status": "ready",
-    "to_name": "Jane Doe",
-    "to_address_1": "123 ANYWHERE ST.",
+    "id": "8ERNJ8SCQ9",
+    "status": "received",
+    "batch_id": 2,
+    "to_name": "15Adam Lawrence",
+    "to_address_1": "1874 CRITTENDEN RD, APT 7",
     "to_address_2": null,
-    "to_city": "VANCOUVER",
-    "to_province_code": "BC",
-    "to_postal_code": "V6K 1A1",
-    "to_country_code": "CA",
+    "to_city": "ROCHESTER",
+    "to_province_code": "WA",
+    "to_postal_code": "14623",
+    "to_country_code": "US",
+    "to_phone": null,
+    "return_name": "AMISTAD NATIONAL RECREATION AREA",
+    "return_address_1": "4121 VETERANS BLVD",
+    "return_address_2": null,
+    "return_city": "DEL RIO",
+    "return_province_code": "TX",
+    "return_postal_code": "78840-3384",
+    "return_country_code": "US",
+    "return_phone": "1-844-842-8777",
+    "package_contents": "merchandise",
+    "description": "Statue and documents in crate",
+    "value": "20.0",
+    "value_currency": "USD",
+    "order_id": null,
+    "order_store": null,
+    "package_type": "parcel",
+    "size_unit": "cm",
+    "size_x": "28.0",
+    "size_y": "21.0",
+    "size_z": "21.0",
+    "weight_unit": "g",
+    "weight": "1850.0",
+    "is_insured": false,
+    "is_signature_requested": false,
+    "postage_type": "usps_priority",
+    "carrier": "usps",
+    "carrier_tracking_code": "9405536895357112578988",
+    "tracking_url": "https://chitchats.com/tracking/8ernj8scq9",
+    "ship_date": "2017-11-15",
+    "purchase_amount": "22.39",
+    "provincial_tax": null,
+    "provincial_tax_label": null,
+    "federal_tax": null,
+    "federal_tax_label": null,
+    "postage_fee": "22.39",
+    "insurance_fee": null,
+    "delivery_fee": "1.00",
+    "created_at": "2017-11-14T11:04:32.168-08:00",
+    "postage_label_png_url": "https://chitchats.com/labels/shipments/8ernj8scq9.png",
+    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/8ernj8scq9.zpl"
+  },
+  {
+    "id": "R94DT3F7DK",
+    "status": "received",
+    "batch_id": 2,
+    "to_name": "14Adam Lawrence",
+    "to_address_1": "1874 CRITTENDEN RD, APT 7",
+    "to_address_2": null,
+    "to_city": "ROCHESTER",
+    "to_province_code": "WA",
+    "to_postal_code": "14623",
+    "to_country_code": "US",
     "to_phone": null,
     "return_name": "APOSTLE ISLANDS NATIONAL LAKESHORE",
     "return_address_1": "415 WASHINGTON AVE",
@@ -69,87 +122,36 @@ _Optional parameters_:
     "return_country_code": "US",
     "return_phone": "1-844-842-8777",
     "package_contents": "merchandise",
-    "description": "Hand made bracelet",
-    "value": "85.0",
+    "description": "Statue and documents in crate",
+    "value": "20.0",
     "value_currency": "USD",
     "order_id": null,
     "order_store": null,
     "package_type": "parcel",
     "size_unit": "cm",
-    "size_x": "10.0",
-    "size_y": "5.0",
-    "size_z": "2.0",
+    "size_x": "28.0",
+    "size_y": "21.0",
+    "size_z": "21.0",
     "weight_unit": "g",
-    "weight": "250.0",
-    "insured": false,
-    "signature_requested": false,
-    "postage_type": "usps_first",
+    "weight": "1850.0",
+    "is_insured": false,
+    "is_signature_requested": false,
+    "postage_type": "usps_priority",
     "carrier": "usps",
-    "carrier_tracking_code": null,
-    "tracking_url": "http://chitchats.test/tracking/1by4s9h87b",
-    "ship_date": null,
-    "purchase_amount": null,
+    "carrier_tracking_code": "9405536895357112579015",
+    "tracking_url": "https://chitchats.com/tracking/r94dt3f7dk",
+    "ship_date": "2017-11-15",
+    "purchase_amount": "22.39",
     "provincial_tax": null,
     "provincial_tax_label": null,
     "federal_tax": null,
     "federal_tax_label": null,
-    "postage_fee": null,
+    "postage_fee": "22.39",
     "insurance_fee": null,
-    "delivery_fee": "0.85",
-    "created_at": "2018-01-27T11:26:41.045-08:00",
-    "postage_label_png_url": null,
-    "postage_label_zpl_url": null
-  },
-  {
-    "shipment_id": "SKFJNMRNMC",
-    "status": "incomplete",
-    "to_name": "John Doe",
-    "to_address_1": "555 MAIN STREET",
-    "to_address_2": "301",
-    "to_city": "VANCOUVER",
-    "to_province_code": "BC",
-    "to_postal_code": "V6B 2R9",
-    "to_country_code": "CA",
-    "to_phone": null,
-    "return_name": null,
-    "return_address_1": null,
-    "return_address_2": null,
-    "return_city": null,
-    "return_province_code": null,
-    "return_postal_code": null,
-    "return_country_code": null,
-    "return_phone": null,
-    "package_contents": "merchandise",
-    "description": "1 Custom handmade ceramic dinner plate",
-    "value": "0.5",
-    "value_currency": "CAD",
-    "order_id": "1262275587",
-    "order_store": "etsy",
-    "package_type": "unknown",
-    "size_unit": null,
-    "size_x": null,
-    "size_y": null,
-    "size_z": null,
-    "weight_unit": null,
-    "weight": null,
-    "insured": false,
-    "signature_requested": false,
-    "postage_type": "unknown",
-    "carrier": "unknown",
-    "carrier_tracking_code": null,
-    "tracking_url": "https://chitchats.com/tracking/skfjnmrnmc",
-    "ship_date": null,
-    "purchase_amount": null,
-    "provincial_tax": null,
-    "provincial_tax_label": null,
-    "federal_tax": null,
-    "federal_tax_label": null,
-    "postage_fee": null,
-    "insurance_fee": null,
-    "delivery_fee": null,
-    "created_at": "2018-01-25T09:43:48.323-08:00",
-    "postage_label_png_url": null,
-    "postage_label_zpl_url": null
+    "delivery_fee": "1.00",
+    "created_at": "2017-11-14T11:03:58.774-08:00",
+    "postage_label_png_url": "https://chitchats.com/labels/shipments/r94dt3f7dk.png",
+    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/r94dt3f7dk.zpl"
   }
 ]
 ```
@@ -184,65 +186,84 @@ The `tracking_details` key contains an array of the tracking evens for the shipm
 ###### Example JSON Response
 ```json
 {
-  "shipment_id": "1BY4S9H87B",
-  "status": "postage_unpaid",
-  "to_name": "Jane Doe",
-  "to_address_1": "123 ANYWHERE ST.",
-  "to_address_2": null,
-  "to_city": "VANCOUVER",
-  "to_province_code": "BC",
-  "to_postal_code": "V6K 1A1",
-  "to_country_code": "CA",
-  "to_phone": null,
-  "return_name": "Shaw Corp",
-  "return_address_1": "205-1925 NELSON ST",
-  "return_address_2": null,
-  "return_city": "VANCOUVER",
-  "return_province_code": "BC",
-  "return_postal_code": "V6G 1N3",
-  "return_country_code": "CA",
-  "return_phone": "1-844-842-8777",
-  "package_contents": "merchandise",
-  "description": "Hand made bracelet",
-  "value": "85.0",
-  "value_currency": "USD",
-  "order_id": null,
-  "order_store": null,
-  "package_type": "parcel",
-  "size_unit": "cm",
-  "size_x": "10.0",
-  "size_y": "5.0",
-  "size_z": "2.0",
-  "weight_unit": "g",
-  "weight": "250.0",
-  "insured": false,
-  "signature_requested": false,
-  "postage_type": "unknown",
-  "carrier": "unknown",
-  "carrier_tracking_code": null,
-  "tracking_url": "https://chitchats.com/tracking/1by4s9h87b",
-  "ship_date": "2018-01-27",
-  "purchase_amount": "8.66",
-  "provincial_tax": null,
-  "provincial_tax_label": null,
-  "federal_tax": "0.41",
-  "federal_tax_label": "GST (5%)",
-  "postage_fee": "8.66",
-  "insurance_fee": null,
-  "delivery_fee": null,
-  "created_at": "2018-01-27T11:26:41.045-08:00",
-  "postage_label_png_url": null,
-  "postage_label_zpl_url": null,
-  "tracking_events": [
-    {
-      "type": "create_shipment",
-      "title": "Shipment created",
-      "subtitle": null,
-      "location_description": null,
-      "created_at": "2018-01-27T11:26:41.056-08:00",
-      "status": null
-    }
-  ]
+  "shipment": {
+    "id": "8ERNJ8SCQ9",
+    "status": "received",
+    "batch_id": 2,
+    "to_name": "Adam Lawrence",
+    "to_address_1": "1874 CRITTENDEN RD, APT 7",
+    "to_address_2": null,
+    "to_city": "ROCHESTER",
+    "to_province_code": "WA",
+    "to_postal_code": "14623",
+    "to_country_code": "US",
+    "to_phone": null,
+    "return_name": "AMISTAD NATIONAL RECREATION AREA",
+    "return_address_1": "4121 VETERANS BLVD",
+    "return_address_2": null,
+    "return_city": "DEL RIO",
+    "return_province_code": "TX",
+    "return_postal_code": "78840-3384",
+    "return_country_code": "US",
+    "return_phone": "1-844-842-8777",
+    "package_contents": "merchandise",
+    "description": "Statue and documents in crate",
+    "value": "20.0",
+    "value_currency": "USD",
+    "order_id": null,
+    "order_store": null,
+    "package_type": "parcel",
+    "size_unit": "cm",
+    "size_x": "28.0",
+    "size_y": "21.0",
+    "size_z": "21.0",
+    "weight_unit": "g",
+    "weight": "1850.0",
+    "is_insured": false,
+    "is_signature_requested": false,
+    "postage_type": "usps_priority",
+    "carrier": "usps",
+    "carrier_tracking_code": "9405536895357112578988",
+    "tracking_url": "https://chitchats.com/tracking/8ernj8scq9",
+    "ship_date": "2017-11-15",
+    "purchase_amount": "22.39",
+    "provincial_tax": null,
+    "provincial_tax_label": null,
+    "federal_tax": null,
+    "federal_tax_label": null,
+    "postage_fee": "22.39",
+    "insurance_fee": null,
+    "delivery_fee": "1.00",
+    "created_at": "2017-11-14T11:04:32.168-08:00",
+    "postage_label_png_url": "https://chitchats.com/labels/shipments/8ernj8scq9.png",
+    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/8ernj8scq9.zpl",
+    "tracking_events": [
+      {
+        "type": "receive_shipment",
+        "title": "Received by Chit Chats",
+        "subtitle": "Delivery Fee $1.00",
+        "location_description": null,
+        "created_at": "2017-11-15T09:53:32.991-08:00",
+        "status": null
+      },
+      {
+        "type": "buy_shipment_postage",
+        "title": "Postage purchased",
+        "subtitle": "USPS Priority Mail® $22.39",
+        "location_description": null,
+        "created_at": "2017-11-15T09:45:42.841-08:00",
+        "status": null
+      },
+      {
+        "type": "create_shipment",
+        "title": "Shipment created",
+        "subtitle": null,
+        "location_description": null,
+        "created_at": "2017-11-14T11:04:32.177-08:00",
+        "status": null
+      }
+    ]
+  }
 }
 ```
 
@@ -283,15 +304,15 @@ Create a shipment
   "size_x": "10",
   "size_y": "5",
   "size_z": "2",
-  "insurance_requested": "yes",
-  "signature_requested": "no",
+  "insurance_requested": true,
+  "signature_requested": false,
   "postage_type": "chit_chats_canada_tracked",
   "tracking_number": "",
   "ship_date": "today"
 }
 ```
 
-This will return `201 Created` with the URL of the shipment in the `Location` header if the creation was a success. See the [Get a shipment](#get-a-shipment) endpoint for more info.
+This will return `201 Created` with the URL of the shipment in the `Location` header and the created shipment in the response if the creation was a success. See the [Get a shipment](#get-a-shipment) endpoint for more info.
 
 ###### Copy as cURL
 ```shell
@@ -336,6 +357,32 @@ curl -s -X DELETE \
 ```
 
 
+Buy postage
+-----------
+
+* `PATCH /shipments/abcde12345/buy` will attempt to buy the selected postage for the given shipment. Returns `200 OK` if successful.
+
+###### Copy as cURL
+```shell
+curl -s -X PATCH \
+  -H "Authorization: $ACCESS_TOKEN" \
+  "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345/buy"
+```
+
+
+Refund postage
+--------------
+
+* `PATCH /shipments/abced12345/refund` will request postage refund for the given shipments if possible. Returns `200 OK` if successful.
+
+###### Copy as cURL
+```shell
+curl -s -X PATCH \
+  -H "Authorization: $ACCESS_TOKEN" \
+  "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345/refund"
+```
+
+
 Add shipments to a batch
 ------------------------
 
@@ -344,7 +391,7 @@ Add shipments to a batch
 ###### Example JSON Request
 ```json
 {
-  "batch": 1,
+  "batch_id": 1,
   "shipment_ids": [
     "ABCDE12345",
     "Q5P4R3S2T1"
@@ -358,7 +405,7 @@ curl -s -X PATCH \
   -H "Authorization: $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "batch": 1,
+    "batch_id": 1,
     "shipment_ids": [
       "ABCDE12345",
       "Q5P4R3S2T1"
