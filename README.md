@@ -36,11 +36,11 @@ curl -X POST \
     "value_currency": "usd",
     "package_type": "parcel",
     "size_unit": "cm",
-    "size_x": "10",
-    "size_y": "5",
-    "size_z": "2",
+    "size_x": 10,
+    "size_y": 5,
+    "size_z": 2.5,
     "weight_unit": "g",
-    "weight": "250",
+    "weight": 250,
     "postage_type": "chit_chats_canada_tracked",
     "ship_date": "today"
   }' \
