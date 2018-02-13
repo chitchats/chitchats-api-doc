@@ -5,6 +5,11 @@ The Chit Chats API
 
 Welcome to the Chit Chats API! If you're looking to integrate your application with Chit Chats or create your own application in concert with data inside of Chit Chats, you're in the right place. We're happy to have you!
 
+API Access Tokens
+-----------------
+
+To use the API you will need to create an API Access Token.  You can do this from
+the Settings > Account page once you are signed into Chit Chats.
 
 Making a request
 ----------------
