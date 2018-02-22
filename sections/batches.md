@@ -74,7 +74,9 @@ Get a batch
 {
   "id": 1,
   "status": "received",
-  "created_at": "2017-09-11T17:29:21.912-07:00"
+  "created_at": "2017-09-11T17:29:21.912-07:00",
+  "label_png_url": "https://chitchats.com/labels/client_batches/1.png?...",
+  "label_zpl_url": "https://chitchats.com/labels/client_batches/1.zpl?..."
 }
 ```
 
