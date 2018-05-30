@@ -290,7 +290,6 @@ Create a shipment
   "postal_code": "V6K 1A1",
   "country_code": "CA",
   "phone": "800-555-1212",
-  "return_us_address": "",
   "package_contents": "merchandise",
   "description": "Hand made bracelet",
   "value": "84.99",
