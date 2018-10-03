@@ -279,6 +279,72 @@ Create a shipment
 
 * `POST /shipments` with the required parameters (see example) to create a new shipment.
 
+_Enumeration values_:
+
+* `package_contents`:
+  * `merchandise`
+  * `documents`
+  * `gift`
+  * `returned_goods`
+  * `sample`
+  * `other`
+* `value_currency`:
+  * `cad`
+  * `usd`
+* `package_type`
+  * `unknown`
+  * `card`
+  * `letter`
+  * `envelope`
+  * `thick_envelope`
+  * `parcel`
+  * `flat_rate_envelope`
+  * `flat_rate_legal_envelope`
+  * `flat_rate_padded_envelope`
+  * `flat_rate_gift_card_envelope`
+  * `flat_rate_window_envelope`
+  * `flat_rate_cardboard_envelope`
+  * `small_flat_rate_envelope`
+  * `small_flat_rate_box`
+  * `medium_flat_rate_box_1`
+  * `medium_flat_rate_box_2`
+  * `large_flat_rate_box`
+  * `large_flat_rate_board_game_box`
+  * `regional_rate_box_a_1`
+  * `regional_rate_box_a_2`
+  * `regional_rate_box_b_1`
+  * `regional_rate_box_b_2`
+* `weight_unit`
+  * `lb`
+  * `oz`
+  * `kg`
+  * `g`
+* `size_unit`
+  * `m`
+  * `cm`
+  * `in`
+* `postage_type`
+  * `unknown`
+  * `usps_express`
+  * `usps_express_mail_international`
+  * `usps_first`
+  * `usps_first_class_mail_international`
+  * `usps_first_class_package_international_service`
+  * `usps_library_mail`
+  * `usps_media_mail`
+  * `usps_parcel_select`
+  * `usps_priority`
+  * `usps_priority_mail_international`
+  * `usps_other`
+  * `ups_other`
+  * `fedex_other`
+  * `chit_chats_canada_tracked`
+  * `chit_chats_international_not_tracked`
+  * `dhl_other`
+  * `asendia_ipa`
+  * `asendia_priority_tracked`
+  * `ups_mi_expedited`
+
 ###### Example JSON Request
 ```json
 {
