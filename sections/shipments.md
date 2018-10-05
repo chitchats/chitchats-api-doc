@@ -282,68 +282,68 @@ Create a shipment
 _Enumeration values_:
 
 * `package_contents`:
-  * `merchandise`
-  * `documents`
-  * `gift`
-  * `returned_goods`
-  * `sample`
-  * `other`
-* `value_currency`:
-  * `cad`
-  * `usd`
+  * `merchandise` - Merchandise
+  * `documents` - Documents
+  * `gift` - Gift
+  * `returned_goods` - Returned goods
+  * `sample` - Sample
+  * `other` - Other
 * `package_type`
-  * `unknown`
-  * `card`
-  * `letter`
-  * `envelope`
-  * `thick_envelope`
-  * `parcel`
-  * `flat_rate_envelope`
-  * `flat_rate_legal_envelope`
-  * `flat_rate_padded_envelope`
-  * `flat_rate_gift_card_envelope`
-  * `flat_rate_window_envelope`
-  * `flat_rate_cardboard_envelope`
-  * `small_flat_rate_envelope`
-  * `small_flat_rate_box`
-  * `medium_flat_rate_box_1`
-  * `medium_flat_rate_box_2`
-  * `large_flat_rate_box`
-  * `large_flat_rate_board_game_box`
-  * `regional_rate_box_a_1`
-  * `regional_rate_box_a_2`
-  * `regional_rate_box_b_1`
-  * `regional_rate_box_b_2`
-* `weight_unit`
-  * `lb`
-  * `oz`
-  * `kg`
-  * `g`
-* `size_unit`
-  * `m`
-  * `cm`
-  * `in`
+  * `unknown` - Unknown
+  * `card` - Postcard
+  * `letter` - Letter
+  * `envelope` - Flat Envelope
+  * `thick_envelope` - Thick Envelope
+  * `parcel` - Parcel
+  * `flat_rate_envelope` - USPS Letter Flat Rate Envelope
+  * `flat_rate_legal_envelope` - USPS Legal Flat Rate Envelope
+  * `flat_rate_padded_envelope` - USPS Padded Flat Rate Envelope
+  * `flat_rate_gift_card_envelope` - USPS Gift Card Flat Rate Envelope
+  * `flat_rate_window_envelope` - USPS Window Flat Rate Envelope
+  * `flat_rate_cardboard_envelope` - USPS Cardboard Flat Rate Envelope
+  * `small_flat_rate_envelope` - USPS Small Flat Rate Envelope
+  * `small_flat_rate_box` - USPS Small Flat Rate Box
+  * `medium_flat_rate_box_1` - USPS Medium Flat Rate Box - 1
+  * `medium_flat_rate_box_2` - USPS Medium Flat Rate Box - 2
+  * `large_flat_rate_box` - USPS Large Flat Rate Box
+  * `large_flat_rate_board_game_box` - USPS Large Flat Rate Board Game Box
+  * `regional_rate_box_a_1` - USPS Priority Mail Regional Rate Box - A1
+  * `regional_rate_box_a_2` - USPS Priority Mail Regional Rate Box - A2
+  * `regional_rate_box_b_1` - USPS Priority Mail Regional Rate Box - B1
+  * `regional_rate_box_b_2` - USPS Priority Mail Regional Rate Box - B2
 * `postage_type`
-  * `unknown`
-  * `usps_express`
-  * `usps_express_mail_international`
-  * `usps_first`
-  * `usps_first_class_mail_international`
-  * `usps_first_class_package_international_service`
-  * `usps_library_mail`
-  * `usps_media_mail`
-  * `usps_parcel_select`
-  * `usps_priority`
-  * `usps_priority_mail_international`
-  * `usps_other`
-  * `ups_other`
-  * `fedex_other`
-  * `chit_chats_canada_tracked`
-  * `chit_chats_international_not_tracked`
-  * `dhl_other`
-  * `asendia_ipa`
-  * `asendia_priority_tracked`
-  * `ups_mi_expedited`
+  * `unknown` - Unknown
+  * `usps_express` - USPS Priority Mail Express®
+  * `usps_express_mail_international` - USPS Priority Mail Express International®
+  * `usps_first` - USPS First-Class Mail®
+  * `usps_first_class_mail_international` - USPS First-Class Mail International
+  * `usps_first_class_package_international_service` - USPS First-Class Package International Service®
+  * `usps_library_mail` - USPS Library Mail
+  * `usps_media_mail` - USPS Media Mail®
+  * `usps_parcel_select` - USPS Parcel Select®
+  * `usps_priority` - USPS Priority Mail®
+  * `usps_priority_mail_international` - USPS Priority Mail International®
+  * `usps_other` - USPS Other Mail Class
+  * `ups_other` - UPS Other Mail Class
+  * `fedex_other` - FedEx Other Mail Class
+  * `chit_chats_canada_tracked` - Chit Chats Canada Tracked
+  * `chit_chats_international_not_tracked` - Chit Chats International Standard
+  * `dhl_other` - DHL Other Mail Class
+  * `asendia_ipa` - Asendia International Priority Airmail
+  * `asendia_priority_tracked` - Asendia International Priority Tracked
+  * `ups_mi_expedited` - UPS Mail Innovations Parcel Select
+* `size_unit`
+  * `m` - Metres
+  * `cm` - Centimetres
+  * `in` - Inches
+* `weight_unit`
+  * `lb` - Pounds
+  * `oz` - Ounces
+  * `kg` - Kilograms
+  * `g` - Grams
+* `value_currency`:
+  * `cad` - Canadian Dollar
+  * `usd` - US Dollar
 
 ###### Example JSON Request
 ```json
