@@ -8,8 +8,8 @@ Endpoints:
 - [Get a shipment](#get-a-shipment)
 - [Create a shipment](#create-a-shipment)
 - [Delete a shipment](#delete-a-shipment)
-- [Buy postage](#buy-postage)
-- [Refund postage](#refund-postage)
+- [Buy shipment](#buy-shipment)
+- [Refund shipment](#refund-shipment)
 - [Add shipments to a batch](#add-shipments-to-a-batch)
 - [Remove shipments from a batch](#remove-shipments-from-a-batch)
 
@@ -423,10 +423,10 @@ curl -s -X DELETE \
 ```
 
 
-Buy postage
------------
+Buy shipment
+------------
 
-* `PATCH /shipments/abcde12345/buy` will attempt to buy the selected postage for the given shipment. Returns `200 OK` if successful.
+* `PATCH /shipments/abcde12345/buy` will attempt to buy the selected postage for the given shipment. For shipments with provided postage this will buy the delivery fee. Returns `200 OK` if successful.
 
 ###### Copy as cURL
 ```shell
@@ -436,10 +436,10 @@ curl -s -X PATCH \
 ```
 
 
-Refund postage
---------------
+Refund shipment
+---------------
 
-* `PATCH /shipments/abced12345/refund` will request postage refund for the given shipments if possible. Returns `200 OK` if successful.
+* `PATCH /shipments/abced12345/refund` will request shipment refund for the given shipments if possible. Returns `200 OK` if successful.
 
 ###### Copy as cURL
 ```shell
