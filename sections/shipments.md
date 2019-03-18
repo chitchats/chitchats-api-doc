@@ -426,7 +426,7 @@ curl -s -X DELETE \
 Buy shipment
 ------------
 
-* `PATCH /shipments/abcde12345/buy` will attempt to buy the selected postage for the given shipment. Returns `200 OK` if successful.  A successful result only means that purchase is requested.  The status of the shipment maybe `postage_requested`.  If this happens the caller will need to wait a few seconds and poll until the shipment returns `ready` or `postage_purchase_failed`.
+* `PATCH /shipments/abcde12345/buy` will attempt to buy the selected postage for the given shipment. Returns `200 OK` if successful.  A successful result only means that a purchase is requested.  The status of the shipment may be `postage_requested`.  If this happens the caller will need to wait a few seconds and poll until the shipment returns `ready` or `postage_purchase_failed`.
 
 The reason for not blocking is that buying postage can take a few seconds so waiting to return for each call would be too inefficient when buying 1000s of shipments. What we recommend doing is calling the buy end point on all your endpoints and then poll the at reasonable intervals until the shipment's status changes to `ready`.  The example shows how to accomplish this.
 
