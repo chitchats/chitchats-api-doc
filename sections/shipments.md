@@ -428,7 +428,7 @@ Buy shipment
 
 * `PATCH /shipments/abcde12345/buy` will attempt to buy the selected postage for the given shipment. Returns `200 OK` if successful.  A successful result only means that a purchase is requested.  The status of the shipment may be `postage_requested`.  If this happens the caller will need to wait a few seconds and poll until the shipment returns `ready` or `postage_purchase_failed`.
 
-The reason for not blocking is that buying postage can take a few seconds (exact duration is dependent on our postage providers but this will normally complete in less than 3 seconds).  Because of the delay waiting to return for each call is too inefficient when buying 1000s of shipments. What we recommend doing is calling the buy end point on all your endpoints and then poll at reasonable intervals until the shipment's status changes to `ready`.  The example shows how to accomplish this.
+The reason for not blocking is that buying postage can take a few seconds (exact duration is dependent on our postage providers but this will normally complete in less than 3 seconds).  Because of the delay waiting to return for each call, is inefficient when buying 1000s of shipments. In this case, we recommend calling the buy end point on all your endpoints and then poll at reasonable intervals until the shipment's status changes to `ready`.  The example below shows how to accomplish this.
 
 ```ruby
 def buy
