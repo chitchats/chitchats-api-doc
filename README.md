@@ -98,10 +98,16 @@ You can perform up to 2000 requests per 5 minute period from the same IP address
 
 We recommend baking 429 response-handling in to your HTTP handling at a low level so your integration handles retries gracefully and automatically.
 
+Testing
+-------
+
+We run a testing/sandbox site at https://staging.chitchats.com that you can use to test your API integration without actually buying postage.  You will need to create a separate account on this site to use it.  To add credits use credit card number 4111 1111 1111 1111 with any expiry and CVC.
+
 API endpoints
 -------------
 - [Batches](https://github.com/chitchats/chitchats-api-doc/blob/master/sections/batches.md)
 - [Shipments](https://github.com/chitchats/chitchats-api-doc/blob/master/sections/shipments.md)
+- [Tracking](https://github.com/chitchats/chitchats-api-doc/blob/master/sections/tracking.md)
 
 Examples
 --------

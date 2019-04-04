@@ -501,7 +501,7 @@ Buy shipment
 
 You can optionally pass the `postage_type` to select the rate.  Refer to the postage_types values returned by the `rates` array in the shipment details.
 
-The reason for not blocking is that buying postage can take a few seconds so waiting to return for each call would be too inefficient when buying 1000s of shipments. What we recommend doing is calling the buy end point on all your endpoints and then poll at reasonable intervals until the shipment's status changes to `ready`.  The example shows how to accomplish this.
+The reason for not blocking is that buying postage can take a few seconds (exact duration is dependent on our postage providers but this will normally complete in less than 3 seconds).  Because of the delay waiting to return for each call, is inefficient when buying 1000s of shipments. In this case, we recommend calling the buy end point on all your endpoints and then poll at reasonable intervals until the shipment's status changes to `ready`.  The example below shows how to accomplish this.
 
 ```ruby
 def buy
