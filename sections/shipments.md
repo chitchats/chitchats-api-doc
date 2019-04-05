@@ -8,7 +8,7 @@ Endpoints:
 - [Get a shipment](#get-a-shipment)
 - [Create a shipment](#create-a-shipment)
 - [Delete a shipment](#delete-a-shipment)
-- [Refresh a shipment](#refresh-shipment)
+- [Refresh a shipment](#refresh-a-shipment)
 - [Buy shipment](#buy-shipment)
 - [Refund shipment](#refund-shipment)
 - [Add shipments to a batch](#add-shipments-to-a-batch)
