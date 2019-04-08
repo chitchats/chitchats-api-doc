@@ -8,6 +8,7 @@ Endpoints:
 - [Get a shipment](#get-a-shipment)
 - [Create a shipment](#create-a-shipment)
 - [Delete a shipment](#delete-a-shipment)
+- [Refresh a shipment](#refresh-a-shipment)
 - [Buy shipment](#buy-shipment)
 - [Refund shipment](#refund-shipment)
 - [Add shipments to a batch](#add-shipments-to-a-batch)
@@ -181,7 +182,9 @@ Get a shipment
 
 * `GET /shipments/1by4s9h87b` will return the shipment with the given ID, granted they have access to it.
 
-The `tracking_details` key contains an array of the tracking evens for the shipment.
+The `tracking_details` key contains an array of the tracking events for the shipment.
+
+The `rates` key contains an array of the elgible postage rates for the shipment.
 
 ###### Example JSON Response
 ```json
@@ -190,8 +193,8 @@ The `tracking_details` key contains an array of the tracking evens for the shipm
     "id": "8ERNJ8SCQ9",
     "status": "received",
     "batch_id": 2,
-    "to_name": "Adam Lawrence",
-    "to_address_1": "1874 CRITTENDEN RD, APT 7",
+    "to_name": "Tommy Lawrence",
+    "to_address_1": "555 ELM RD, APT 17",
     "to_address_2": null,
     "to_city": "ROCHESTER",
     "to_province_code": "WA",
@@ -237,6 +240,44 @@ The `tracking_details` key contains an array of the tracking evens for the shipm
     "created_at": "2017-11-14T11:04:32.168-08:00",
     "postage_label_png_url": "https://chitchats.com/labels/shipments/8ernj8scq9.png",
     "postage_label_zpl_url": "https://chitchats.com/labels/shipments/8ernj8scq9.zpl",
+    "rates": [
+      {
+        "postage_type": "ups_mi_expedited",
+        "postage_carrier_type": "ups_mi",
+        "postage_description": "UPS Mail Innovations Parcel Select",
+        "signature_confirmation_description": null,
+        "delivery_time_description": "2-9 business days",
+        "tracking_type_description": "Full tracking included",
+        "is_insured": true,
+        "purchase_amount": "4.23",
+        "provincial_tax": null,
+        "provincial_tax_label": null,
+        "federal_tax": null,
+        "federal_tax_label": null,
+        "postage_fee": "4.23",
+        "insurance_fee": "0.35",
+        "delivery_fee": "0.85",
+        "payment_amount": "5.43"
+      },
+      {
+        "postage_type": "usps_first",
+        "postage_carrier_type": "usps",
+        "postage_description": "USPS First-Class Mail®",
+        "signature_confirmation_description": null,
+        "delivery_time_description": "2-4 business days",
+        "tracking_type_description": "Full tracking included",
+        "is_insured": true,
+        "purchase_amount": "4.28",
+        "provincial_tax": null,
+        "provincial_tax_label": null,
+        "federal_tax": null,
+        "federal_tax_label": null,
+        "postage_fee": "4.28",
+        "insurance_fee": "0.35",
+        "delivery_fee": "0.85",
+        "payment_amount": "5.48"
+      }
+    ],
     "tracking_events": [
       {
         "type": "receive_shipment",
@@ -312,7 +353,7 @@ _Enumeration values_:
   * `regional_rate_box_b_1` - USPS Priority Mail Regional Rate Box - B1
   * `regional_rate_box_b_2` - USPS Priority Mail Regional Rate Box - B2
 * `postage_type`
-  * `unknown` - Unknown
+  * `unknown` - Use when you wish to view rates before buying postage
   * `usps_express` - USPS Priority Mail Express®
   * `usps_express_mail_international` - USPS Priority Mail Express International®
   * `usps_first` - USPS First-Class Mail®
@@ -422,11 +463,43 @@ curl -s -X DELETE \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345"
 ```
 
+Refresh a shipment
+------------------
+
+* `PATCH /shipments/abcde12345/refresh` will refresh shipment and postage rates for the given shipment. Returns `200 OK` if successful.  A successful result will return the updated shipment.
+
+The following parameters can be passed to update the shipment when refreshing.
+
+* insurance_requested - `true` or `false`
+* media_mail_requested - `true` or `false`
+* signature_requested - `true` or `false`
+* ship_date - Either `today` or a date in the format of `YYYY-MM-DD`
+
+###### Copy as cURL
+```shell
+curl -s -X PATCH \
+  -H "Authorization: $ACCESS_TOKEN" \
+  "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345/refresh"
+```
+
+###### Copy as cURL
+```shell
+curl -X PATCH \
+  -H "Authorization: $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "insurance_requested": true,
+    "ship_date": "today"
+  }' \
+  "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345/refresh"
+```
 
 Buy shipment
 ------------
 
 * `PATCH /shipments/abcde12345/buy` will attempt to buy the selected postage for the given shipment. Returns `200 OK` if successful.  A successful result only means that a purchase is requested.  The status of the shipment may be `postage_requested`.  If this happens the caller will need to wait a few seconds and poll until the shipment returns `ready` or `postage_purchase_failed`.
+
+You can optionally pass the `postage_type` to select the rate.  Refer to the postage_types values returned by the `rates` array in the shipment details.
 
 The reason for not blocking is that buying postage can take a few seconds (exact duration is dependent on our postage providers but this will normally complete in less than 3 seconds).  Because of the delay waiting to return for each call, is inefficient when buying 1000s of shipments. In this case, we recommend calling the buy end point on all your endpoints and then poll at reasonable intervals until the shipment's status changes to `ready`.  The example below shows how to accomplish this.
 
@@ -447,6 +520,15 @@ end
 ```shell
 curl -s -X PATCH \
   -H "Authorization: $ACCESS_TOKEN" \
+  "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345/buy"
+```
+
+###### Copy as cURL
+```shell
+curl -X PATCH \
+  -H "Authorization: $ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"postage_type": "usps_first"}' \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345/buy"
 ```
 
