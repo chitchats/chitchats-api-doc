@@ -368,10 +368,8 @@ _Enumeration values_:
   * `ups_other` - UPS Other Mail Class
   * `fedex_other` - FedEx Other Mail Class
   * `chit_chats_canada_tracked` - Chit Chats Canada Tracked
-  * `chit_chats_domestic_tracked` - Chit Chats Domestic Tracked (alternative to Chit Chats Canada Tracked, limited availability)
   * `chit_chats_international_not_tracked` - Chit Chats International Standard
   * `dhl_other` - DHL Other Mail Class
-  * `asendia_ipa` - Asendia International Priority Airmail
   * `asendia_priority_tracked` - Asendia International Priority Tracked
   * `ups_mi_expedited` - UPS Mail Innovations Parcel Select
 * `size_unit`
