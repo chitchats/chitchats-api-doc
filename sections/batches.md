@@ -3,7 +3,7 @@ Batches
 
 Endpoints:
 
-- [Get all batches](#get-batches)
+- [Get all batches](#get-all-batches)
 - [Count batches](#count-batches)
 - [Get a batch](#get-a-batch)
 - [Create a batch](#create-a-batch)
