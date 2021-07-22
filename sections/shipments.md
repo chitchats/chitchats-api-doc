@@ -387,6 +387,8 @@ _Enumeration values_:
 
 You can optionally pass the `return_address` fields i.e. `return_name`, `return_address_1`, `return_address_2`, `return_city`, `return_province_code`, `return_postal_code`, `return_phone`.
 
+With the introduction of VAT collection at the merchant level, you can optionally pass a `vat_reference` which refers to your tax identification number.
+
 Note: Only US Return Address can be requested for a shipment, so no need to send return_country_code param. Return Address is determined when postage is bought. We will use the provided address if the postage allows it, otherwise we ignore the address provided and pick default address for that postage.
 
 ###### Example JSON Request
