@@ -368,6 +368,7 @@ _Enumeration values_:
   * `ups_other` - UPS Other Mail Class
   * `fedex_other` - FedEx Other Mail Class
   * `chit_chats_canada_tracked` - Chit Chats Canada Tracked
+  * `chit_chats_international_tracked` - Chit Chats International Tracked
   * `chit_chats_us_tracked` - Chit Chats U.S. Tracked
   * `dhl_other` - DHL Other Mail Class
   * `asendia_priority_tracked` - Asendia International Priority Tracked
@@ -388,6 +389,7 @@ _Enumeration values_:
 You can optionally pass the `return_address` fields i.e. `return_name`, `return_address_1`, `return_address_2`, `return_city`, `return_province_code`, `return_postal_code`, `return_phone`.
 
 With the introduction of VAT collection at the merchant level, you can optionally pass a `vat_reference` which refers to your tax identification number.
+With addition of `vat_reference`, you can now request Duties Paid postage for international shipments by passing `duties_paid_requested`. Duties Paid postages is only avaiable for `chit_chats_international_tracked`, `vat_reference` must be provided in order to use duties paid postages.
 
 Note: Only US Return Address can be requested for a shipment, so no need to send return_country_code param. Return Address is determined when postage is bought. We will use the provided address if the postage allows it, otherwise we ignore the address provided and pick default address for that postage.
 
@@ -417,6 +419,8 @@ Note: Only US Return Address can be requested for a shipment, so no need to send
   "size_z": 2,
   "insurance_requested": true,
   "signature_requested": false,
+  "vat_reference": "",
+  "duties_paid_requested": false,
   "postage_type": "chit_chats_canada_tracked",
   "tracking_number": "",
   "ship_date": "today"
