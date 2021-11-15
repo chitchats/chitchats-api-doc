@@ -391,6 +391,8 @@ You can optionally pass the `return_address` fields i.e. `return_name`, `return_
 With the introduction of VAT collection at the merchant level, you can optionally pass a `vat_reference` which refers to your tax identification number.
 With addition of `vat_reference`, you can now request Duties Paid postage for international shipments by passing `duties_paid_requested`. Duties Paid postages is only avaiable for `chit_chats_international_tracked`, `vat_reference` must be provided in order to use duties paid postages.
 
+To select the cheapest available rate for a shipment, we've added an optional parameter `cheapest_postage_type_requested` which can be enabled with a value of `yes`. This must be paired with a `postage_type` value of `unknown`. Currently this is only available for US destined shipments.
+
 Note: Only US Return Address can be requested for a shipment, so no need to send return_country_code param. Return Address is determined when postage is bought. We will use the provided address if the postage allows it, otherwise we ignore the address provided and pick default address for that postage.
 
 ###### Example JSON Request
@@ -422,6 +424,7 @@ Note: Only US Return Address can be requested for a shipment, so no need to send
   "vat_reference": "",
   "duties_paid_requested": false,
   "postage_type": "chit_chats_canada_tracked",
+  "cheapest_postage_type_requested": "no",
   "tracking_number": "",
   "ship_date": "today"
 }
