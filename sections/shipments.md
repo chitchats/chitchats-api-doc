@@ -99,8 +99,8 @@ _Optional parameters_:
     "insurance_fee": null,
     "delivery_fee": "1.00",
     "created_at": "2017-11-14T11:04:32.168-08:00",
-    "postage_label_png_url": "https://chitchats.com/labels/shipments/8ernj8scq9.png",
-    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/8ernj8scq9.zpl"
+    "postage_label_png_url": "https://chitchats.com/labels/shipments/8ernj8scq9.png?...",
+    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/8ernj8scq9.zpl?..."
   },
   {
     "id": "R94DT3F7DK",
@@ -151,8 +151,8 @@ _Optional parameters_:
     "insurance_fee": null,
     "delivery_fee": "1.00",
     "created_at": "2017-11-14T11:03:58.774-08:00",
-    "postage_label_png_url": "https://chitchats.com/labels/shipments/r94dt3f7dk.png",
-    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/r94dt3f7dk.zpl"
+    "postage_label_png_url": "https://chitchats.com/labels/shipments/r94dt3f7dk.png?...",
+    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/r94dt3f7dk.zpl?..."
   }
 ]
 ```
@@ -238,8 +238,8 @@ The `rates` key contains an array of the elgible postage rates for the shipment.
     "insurance_fee": null,
     "delivery_fee": "1.00",
     "created_at": "2017-11-14T11:04:32.168-08:00",
-    "postage_label_png_url": "https://chitchats.com/labels/shipments/8ernj8scq9.png",
-    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/8ernj8scq9.zpl",
+    "postage_label_png_url": "https://chitchats.com/labels/shipments/8ernj8scq9.png?...",
+    "postage_label_zpl_url": "https://chitchats.com/labels/shipments/8ernj8scq9.zpl?...",
     "rates": [
       {
         "postage_type": "ups_mi_expedited",
