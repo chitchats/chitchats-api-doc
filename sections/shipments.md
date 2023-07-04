@@ -370,6 +370,7 @@ _Enumeration values_:
   * `chit_chats_canada_tracked` - Chit Chats Canada Tracked
   * `chit_chats_international_tracked` - Chit Chats International Tracked
   * `chit_chats_us_tracked` - Chit Chats U.S. Tracked
+  * `chit_chats_us_select` - Chit Chats U.S. Select
   * `dhl_other` - DHL Other Mail Class
   * `asendia_priority_tracked` - Asendia International Priority Tracked
   * `ups_mi_expedited` - UPS Mail Innovations Parcel Select
