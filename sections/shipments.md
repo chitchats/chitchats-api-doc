@@ -361,7 +361,6 @@ _Enumeration values_:
   * `usps_first_class_package_international_service` - USPS First-Class Package International Service®
   * `usps_library_mail` - USPS Library Mail
   * `usps_media_mail` - USPS Media Mail®
-  * `usps_parcel_select` - USPS Parcel Select®
   * `usps_priority` - USPS Priority Mail®
   * `usps_priority_mail_international` - USPS Priority Mail International®
   * `usps_other` - USPS Other Mail Class
