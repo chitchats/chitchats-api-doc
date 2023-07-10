@@ -347,11 +347,6 @@ _Enumeration values_:
   * `medium_flat_rate_box_1` - USPS Medium Flat Rate Box - 1
   * `medium_flat_rate_box_2` - USPS Medium Flat Rate Box - 2
   * `large_flat_rate_box` - USPS Large Flat Rate Box
-  * `large_flat_rate_board_game_box` - USPS Large Flat Rate Board Game Box
-  * `regional_rate_box_a_1` - USPS Priority Mail Regional Rate Box - A1
-  * `regional_rate_box_a_2` - USPS Priority Mail Regional Rate Box - A2
-  * `regional_rate_box_b_1` - USPS Priority Mail Regional Rate Box - B1
-  * `regional_rate_box_b_2` - USPS Priority Mail Regional Rate Box - B2
 * `postage_type`
   * `unknown` - Use when you wish to view rates before buying postage
   * `usps_express` - USPS Priority Mail Express®
@@ -359,21 +354,18 @@ _Enumeration values_:
   * `usps_first` - USPS First-Class Mail®
   * `usps_first_class_mail_international` - USPS First-Class Mail International
   * `usps_first_class_package_international_service` - USPS First-Class Package International Service®
+  * `usps_ground_advantage` - USPS Ground Advantage®
   * `usps_library_mail` - USPS Library Mail
   * `usps_media_mail` - USPS Media Mail®
   * `usps_priority` - USPS Priority Mail®
   * `usps_priority_mail_international` - USPS Priority Mail International®
   * `usps_other` - USPS Other Mail Class
-  * `ups_other` - UPS Other Mail Class
-  * `fedex_other` - FedEx Other Mail Class
   * `chit_chats_canada_tracked` - Chit Chats Canada Tracked
   * `chit_chats_international_tracked` - Chit Chats International Tracked
+  * `chit_chats_slim` -   Chit Chats Slim
   * `chit_chats_us_edge` - Chit Chats U.S. Edge
   * `chit_chats_us_select` - Chit Chats U.S. Select
-  * `chit_chats_us_tracked` - Chit Chats U.S. Tracked
-  * `dhl_other` - DHL Other Mail Class
   * `asendia_priority_tracked` - Asendia International Priority Tracked
-  * `ups_mi_expedited` - UPS Mail Innovations Parcel Select
 * `size_unit`
   * `m` - Metres
   * `cm` - Centimetres
