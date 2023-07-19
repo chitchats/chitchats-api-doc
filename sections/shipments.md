@@ -429,7 +429,7 @@ Note: Only US Return Address can be requested for a shipment, so no need to send
          "value_amount": "84.49"
          "currency_code": "usd",
          "hs_tariff_code": null, // optional
-         "origin_country": null // mandatory if hs_tariff_code is present
+         "origin_country": null // optional
       }
   ]
 }
