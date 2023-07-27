@@ -378,8 +378,10 @@ _Enumeration values_:
 * `value_currency`:
   * `cad` - Canadian Dollar
   * `usd` - US Dollar
-
+    
 You can optionally pass the `return_address` fields i.e. `return_name`, `return_address_1`, `return_address_2`, `return_city`, `return_province_code`, `return_postal_code`, `return_phone`.
+
+If you are purchasing an international shipment (non US & CA), you must include `line_items` as part of the payload.
 
 With the introduction of VAT collection at the merchant level, you can optionally pass a `vat_reference` which refers to your tax identification number.
 With addition of `vat_reference`, you can now request Duties Paid postage for international shipments by passing `duties_paid_requested`. Duties Paid postages is only avaiable for `chit_chats_international_tracked`, `vat_reference` must be provided in order to use duties paid postages.
@@ -419,7 +421,17 @@ Note: Only US Return Address can be requested for a shipment, so no need to send
   "postage_type": "chit_chats_canada_tracked",
   "cheapest_postage_type_requested": "no",
   "tracking_number": "",
-  "ship_date": "today"
+  "ship_date": "today",
+  "line_items": [ // Only required for international (non US & CA) shipments
+      {
+         "quantity": 1,
+         "description": "Hand made bracelet",
+         "value_amount": "84.49"
+         "currency_code": "usd",
+         "hs_tariff_code": null, // optional
+         "origin_country": null // optional
+      }
+  ]
 }
 ```
 
