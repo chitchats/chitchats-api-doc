@@ -382,7 +382,7 @@ _Enumeration values_:
   * `usd` - US Dollar
     
 You can optionally pass the `return_address` fields i.e. `return_name`, `return_address_1`, `return_address_2`, `return_city`, `return_province_code`, `return_postal_code`, `return_phone`.
-You can also optionally pass the recipient `email` field. This `email` is used by final mile carrier to contact the recipient if needed. For now, only International postage provide `email` to the final mile carriers.
+You can also optionally pass the recipient `email` field. This `email` is used by final mile carriers to contact the recipient if needed. For now, only International Tracked postage provide `email` to the final mile carriers.
 
 If you are purchasing an international shipment (non US & CA), you must include `line_items` as part of the payload.
 
