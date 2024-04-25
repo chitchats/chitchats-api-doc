@@ -349,23 +349,23 @@ _Enumeration values_:
   * `large_flat_rate_box` - USPS Large Flat Rate Box
 * `postage_type`
   * `unknown` - Use when you wish to view rates before buying postage
+  * `chit_chats_us_edge` - Chit Chats U.S. Edge
+  * `chit_chats_us_select` - Chit Chats U.S. Select
   * `usps_express` - USPS Priority Mail Express®
-  * `usps_express_mail_international` - USPS Priority Mail Express International®
   * `usps_first` - USPS First-Class Mail®
-  * `usps_first_class_mail_international` - USPS First-Class Mail International
-  * `usps_first_class_package_international_service` - USPS First-Class Package International Service®
   * `usps_ground_advantage` - USPS Ground Advantage®
   * `usps_library_mail` - USPS Library Mail
   * `usps_media_mail` - USPS Media Mail®
   * `usps_priority` - USPS Priority Mail®
-  * `usps_priority_mail_international` - USPS Priority Mail International®
   * `usps_other` - USPS Other Mail Class
   * `chit_chats_canada_tracked` - Chit Chats Canada Tracked
-  * `chit_chats_international_tracked` - Chit Chats International Tracked
+  * `chit_chats_select` - Chit Chats Select
   * `chit_chats_slim` -   Chit Chats Slim
-  * `chit_chats_us_edge` - Chit Chats U.S. Edge
-  * `chit_chats_us_select` - Chit Chats U.S. Select
-  * `asendia_priority_tracked` - Asendia International Priority Tracked
+  * `chit_chats_international_tracked` - Chit Chats International Tracked
+  * `usps_express_mail_international` - USPS Priority Mail Express International®
+  * `usps_first_class_mail_international` - USPS First-Class Mail International
+  * `usps_first_class_package_international_service` - USPS First-Class Package International Service®
+  * `usps_priority_mail_international` - USPS Priority Mail International®
 * `size_unit`
   * `m` - Metres
   * `cm` - Centimetres
