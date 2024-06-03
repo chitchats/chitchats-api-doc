@@ -11,6 +11,7 @@ Endpoints:
 - [Refresh a shipment](#refresh-a-shipment)
 - [Buy shipment](#buy-shipment)
 - [Refund shipment](#refund-shipment)
+- [Get all returns](#get-all-returns)
 - [Add shipments to a batch](#add-shipments-to-a-batch)
 - [Remove shipments from a batch](#remove-shipments-from-a-batch)
 
@@ -378,7 +379,7 @@ _Enumeration values_:
 * `value_currency`:
   * `cad` - Canadian Dollar
   * `usd` - US Dollar
-    
+
 You can optionally pass the `return_address` fields i.e. `return_name`, `return_address_1`, `return_address_2`, `return_city`, `return_province_code`, `return_postal_code`, `return_phone`.
 
 If you are purchasing an international shipment (non US & CA), you must include `line_items` as part of the payload.
@@ -561,6 +562,48 @@ curl -s -X PATCH \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345/refund"
 ```
 
+Get all returns
+-----------------
+
+* `GET /returns` will return a [paginated list][pagination] of shipments belonging to the client sorted by most recently created return first.
+
+_Optional parameters_:
+
+* `limit` (integer) - number of records to return per page (default is 100).
+
+* `page` (integer) - pagination page number (default is 1).
+
+* `status` (enum) - allows for searching shipments based on the following states:
+  * `on_hold` - the shipment has been received by Chit Chats, but no return method has been specified by the client.
+  * `ready` - the shipment is ready to be received by Chit Chats. This means the postage has been purchased or provided.
+  * `in_transit` - the shipment is in the process of being delivered.
+  * `resolved` - the shipment has been resolved.
+
+###### Example JSON Response
+```json
+[
+  {
+    "id": "I7U0J7G5Y0",
+    "status": "in_transit",
+    "original_shipment_id": "S0W3S7M0B2",
+    "created_at": "2024-05-14T11:04:32.168-08:00",
+    "updated_at": "2024-05-14T11:04:32.168-08:00"
+  },
+  {
+    "id": "M4J1N86A4V",
+    "status": "in_transit",
+    "original_shipment_id": "E9G7Z3B86V",
+    "created_at": "2024-05-10T01:22:13.181-02:00",
+    "updated_at": "2024-05-10T01:22:13.181-02:00"
+  }
+]
+```
+
+###### Copy as cURL
+```shell
+curl -H "Authorization: $ACCESS_TOKEN" \
+  "https://chitchats.com/api/v1/clients/$CLIENT_ID/returns"
+```
 
 Add shipments to a batch
 ------------------------
