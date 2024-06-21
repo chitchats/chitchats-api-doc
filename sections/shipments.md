@@ -583,18 +583,54 @@ _Optional parameters_:
 ```json
 [
   {
-    "id": "I7U0J7G5Y0",
-    "status": "in_transit",
-    "original_shipment_id": "S0W3S7M0B2",
-    "created_at": "2024-05-14T11:04:32.168-08:00",
-    "updated_at": "2024-05-14T11:04:32.168-08:00"
+    "id":"N06V1Z6W6X",
+    "status":"in_transit",
+    "created_at":"2024-05-14T10:15:53.260-07:00",
+    "updated_at":"2024-05-14T10:16:42.931-07:00",
+    "resolution":"unknown",
+    "resolved_at":null,
+    "original_shipment":{
+      "id":"B5H53N7I0C",
+      "order_type":"woocommerce",
+      "order_reference":null,
+      "to_name":"chit chats us edge",
+      "to_street":"21000 HACIENDA BLVD",
+      "to_street_2":"BUILDING B APARTMENT G06",
+      "to_city":"CALIFORNIA CITY",
+      "to_province_code":"CA",
+      "to_postal_code":"93505",
+      "to_country_code":"US",
+      "to_phone":null,
+      "customs_description":"5 USB cables",
+      "created_at":"2024-05-13T11:56:13.296-07:00",
+      "updated_at":"2024-05-13T12:59:14.393-07:00",
+      "resolution":"delivery_confirmed",
+      "resolved_at":"2024-04-16T05:50:46.000-07:00"
   },
   {
-    "id": "M4J1N86A4V",
-    "status": "in_transit",
-    "original_shipment_id": "E9G7Z3B86V",
-    "created_at": "2024-05-10T01:22:13.181-02:00",
-    "updated_at": "2024-05-10T01:22:13.181-02:00"
+    "id":"D8G63W7E2V",
+    "status":"in_transit",
+    "created_at":"2024-05-01T13:22:56.632-07:00",
+    "updated_at":"2024-05-01T13:23:27.175-07:00",
+    "resolution":"unknown",
+    "resolved_at":null,
+    "original_shipment":{
+      "id":"C9G9S12I35",
+      "order_type":"woocommerce",
+      "order_reference":null,
+      "to_name":"chit",
+      "to_street":"REDACTED",
+      "to_street_2":null,
+      "to_city":"APO",
+      "to_province_code":"AE",
+      "to_postal_code":"09096",
+      "to_country_code":"US",
+      "to_phone":null,
+      "customs_description":"1 USB cable, 1 USB flash drive, 1 USB adapter",
+      "created_at":"2024-03-11T10:57:11.498-07:00",
+      "updated_at":"2024-05-14T05:04:48.738-07:00",
+      "resolution":"delivery_confirmed",
+      "resolved_at":"2024-02-14T04:52:13.000-08:00"
   }
 ]
 ```
