@@ -565,7 +565,7 @@ curl -s -X PATCH \
 Get all returns
 -----------------
 
-* `GET /returns` will return a [paginated list][pagination] of shipments belonging to the client sorted by most recently created return first.
+* `GET /returns` will return a [paginated list][pagination] of return shipments belonging to the client sorted by most recently created return first.
 
 _Optional parameters_:
 
@@ -573,11 +573,11 @@ _Optional parameters_:
 
 * `page` (integer) - pagination page number (default is 1).
 
-* `status` (enum) - allows for searching shipments based on the following states:
-  * `on_hold` - the shipment has been received by Chit Chats, but no return method has been specified by the client.
-  * `ready` - the shipment is ready to be received by Chit Chats. This means the postage has been purchased or provided.
-  * `in_transit` - the shipment is in the process of being delivered.
-  * `resolved` - the shipment has been resolved.
+* `status` (enum) - allows for searching return shipments based on the following states:
+  * `on_hold` - the return shipment has been received by Chit Chats, but no return method has been specified by the client.
+  * `in_transit` - the return shipment has been received by Chit Chats and it's being processed to send back to the client.
+  * `ready` - the return shipment is ready to be picked up by client at client's preferred branch.
+  * `resolved` - the return shipment has been resolved.
 
 ###### Example JSON Response
 ```json
