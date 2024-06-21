@@ -11,6 +11,7 @@ Endpoints:
 - [Refresh a shipment](#refresh-a-shipment)
 - [Buy shipment](#buy-shipment)
 - [Refund shipment](#refund-shipment)
+- [Get all returns](#get-all-returns)
 - [Add shipments to a batch](#add-shipments-to-a-batch)
 - [Remove shipments from a batch](#remove-shipments-from-a-batch)
 
@@ -378,7 +379,7 @@ _Enumeration values_:
 * `value_currency`:
   * `cad` - Canadian Dollar
   * `usd` - US Dollar
-    
+
 You can optionally pass the `return_address` fields i.e. `return_name`, `return_address_1`, `return_address_2`, `return_city`, `return_province_code`, `return_postal_code`, `return_phone`.
 
 If you are purchasing an international shipment (non US & CA), you must include `line_items` as part of the payload.
@@ -561,6 +562,84 @@ curl -s -X PATCH \
   "https://chitchats.com/api/v1/clients/$CLIENT_ID/shipments/abcde12345/refund"
 ```
 
+Get all returns
+-----------------
+
+* `GET /returns` will return a [paginated list][pagination] of return shipments belonging to the client sorted by most recently created return first.
+
+_Optional parameters_:
+
+* `limit` (integer) - number of records to return per page (default is 100).
+
+* `page` (integer) - pagination page number (default is 1).
+
+* `status` (enum) - allows for searching return shipments based on the following states:
+  * `on_hold` - the return shipment has been received by Chit Chats, but no return method has been specified by the client.
+  * `in_transit` - the return shipment has been received by Chit Chats and it's being processed to send back to the client.
+  * `ready` - the return shipment is ready to be picked up by client at client's preferred branch.
+  * `resolved` - the return shipment has been resolved.
+
+###### Example JSON Response
+```json
+[
+  {
+    "id":"N06V1Z6W6X",
+    "status":"in_transit",
+    "created_at":"2024-05-14T10:15:53.260-07:00",
+    "updated_at":"2024-05-14T10:16:42.931-07:00",
+    "resolution":"unknown",
+    "resolved_at":null,
+    "original_shipment":{
+      "id":"B5H53N7I0C",
+      "order_type":"woocommerce",
+      "order_reference":null,
+      "to_name":"chit chats us edge",
+      "to_street":"21000 HACIENDA BLVD",
+      "to_street_2":"BUILDING B APARTMENT G06",
+      "to_city":"CALIFORNIA CITY",
+      "to_province_code":"CA",
+      "to_postal_code":"93505",
+      "to_country_code":"US",
+      "to_phone":null,
+      "customs_description":"5 USB cables",
+      "created_at":"2024-05-13T11:56:13.296-07:00",
+      "updated_at":"2024-05-13T12:59:14.393-07:00",
+      "resolution":"delivery_confirmed",
+      "resolved_at":"2024-04-16T05:50:46.000-07:00"
+  },
+  {
+    "id":"D8G63W7E2V",
+    "status":"in_transit",
+    "created_at":"2024-05-01T13:22:56.632-07:00",
+    "updated_at":"2024-05-01T13:23:27.175-07:00",
+    "resolution":"unknown",
+    "resolved_at":null,
+    "original_shipment":{
+      "id":"C9G9S12I35",
+      "order_type":"woocommerce",
+      "order_reference":null,
+      "to_name":"chit",
+      "to_street":"REDACTED",
+      "to_street_2":null,
+      "to_city":"APO",
+      "to_province_code":"AE",
+      "to_postal_code":"09096",
+      "to_country_code":"US",
+      "to_phone":null,
+      "customs_description":"1 USB cable, 1 USB flash drive, 1 USB adapter",
+      "created_at":"2024-03-11T10:57:11.498-07:00",
+      "updated_at":"2024-05-14T05:04:48.738-07:00",
+      "resolution":"delivery_confirmed",
+      "resolved_at":"2024-02-14T04:52:13.000-08:00"
+  }
+]
+```
+
+###### Copy as cURL
+```shell
+curl -H "Authorization: $ACCESS_TOKEN" \
+  "https://chitchats.com/api/v1/clients/$CLIENT_ID/returns"
+```
 
 Add shipments to a batch
 ------------------------
