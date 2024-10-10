@@ -63,6 +63,7 @@ _Optional parameters_:
     "to_postal_code": "14623",
     "to_country_code": "US",
     "to_phone": null,
+    "to_email": null,
     "return_name": "AMISTAD NATIONAL RECREATION AREA",
     "return_address_1": "4121 VETERANS BLVD",
     "return_address_2": null,
@@ -202,6 +203,7 @@ The `rates` key contains an array of the elgible postage rates for the shipment.
     "to_postal_code": "14623",
     "to_country_code": "US",
     "to_phone": null,
+    "to_email": null,
     "return_name": "AMISTAD NATIONAL RECREATION AREA",
     "return_address_1": "4121 VETERANS BLVD",
     "return_address_2": null,
@@ -381,6 +383,7 @@ _Enumeration values_:
   * `usd` - US Dollar
 
 You can optionally pass the `return_address` fields i.e. `return_name`, `return_address_1`, `return_address_2`, `return_city`, `return_province_code`, `return_postal_code`, `return_phone`.
+You can also optionally pass the recipient `email` field. This `email` is used by final mile carriers to contact the recipient if needed. For now, only International Tracked postage provide `email` to the final mile carriers.
 
 If you are purchasing an international shipment (non US & CA), you must include `line_items` as part of the payload.
 
@@ -402,6 +405,7 @@ Note: Only US Return Address can be requested for a shipment, so no need to send
   "postal_code": "V6K 1A1",
   "country_code": "CA",
   "phone": "800-555-1212",
+  "email": "email@example.com",
   "package_contents": "merchandise",
   "description": "Hand made bracelet",
   "value": "84.99",
