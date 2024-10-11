@@ -1,3 +1,9 @@
+<br>
+
+## :warning: This README is no longer maintained. Please refer to the API Reference available [here](https://chitchats.com/docs/api/v1).
+
+<br>
+
 The Chit Chats API
 ==================
 
